@@ -1946,7 +1946,7 @@
     <div class="slide-number">11</div>
     <h2>What Would Change the Verdict</h2>
     <ul>
-        <li><strong>Precision per conversion.</strong> Only exactness forces digit planes. Workloads that tolerate approximation (CKKS <em>encoding and decoding</em> use complex FFTs; ML layers outside the encrypted domain) avoid the tax entirely.</li>
+        <li><strong>Precision per conversion.</strong> Only exactness forces digit planes. Workloads that tolerate approximation (CKKS <em>encoding and decoding</em> use complex FFTs; ML layers outside the encrypted domain) avoid the tax entirely. The sister series <a href="https://brendanjameslynskey.github.io/LLM_Hub_Fourier_Optics_Inference/">Fourier Optics for Inference</a> works through that float case for LLM inference: a noise rule instead of exactness, averaging passes instead of digit planes, and a simulated optical prefill pool.</li>
         <li><strong>More work per conversion.</strong> Chaining optical stages, or doing a whole length-N transform per pass, raises butterflies offloaded per point, but needs more ENOB at the output.</li>
         <li><strong>Different mappings.</strong> Optical matrix-vector engines could take on base conversion, which is a matrix product, or polynomial products as convolutions; PHAT's TFHE design maps FFT-based polynomial multiplication. Each needs its own precision analysis.</li>
         <li><strong>Converter technology.</strong> The break-even energy above is a target: about 30 pJ per conversion pair at 8 ENOB, together with low static power.</li>
